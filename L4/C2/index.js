@@ -1,11 +1,14 @@
-let m = 21;
-let n = 40;
+// put your code here
+const m = 21;
+const n = 40;
+let e = m;
 let result = 1;
+
 do {
-    if (m % 2 === 1) {
-        result += m;
+    if (e % 2 === 1) {
+        result *= e;
     }
-    m++;
-} while (m <= n);
+    e++;
+} while (e <= n);
 
 console.log(result);
