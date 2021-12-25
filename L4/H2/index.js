@@ -1,10 +1,10 @@
-const m = 15;
+const n = 15;
 let sum = "1";
-let e = 2;
+let i = 2;
 
 do {
-    sum += String(e);
-    e++;
-} while (e <= 15);
+    sum += String(i);
+    i++;
+} while (i <= 15);
 
 console.log(sum);
