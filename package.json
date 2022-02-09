@@ -88,6 +88,7 @@
     "is-symbol": "^1.0.4",
     "is-weakref": "^1.0.2",
     "isexe": "^2.0.0",
+    "jest": "^27.4.7",
     "js-yaml": "^4.1.0",
     "json-schema-traverse": "^0.4.1",
     "json-stable-stringify-without-jsonify": "^1.0.1",
@@ -153,5 +154,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3"
+  }
 }
