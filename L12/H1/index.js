@@ -1,5 +1,4 @@
-let res = "";
-for (let i = 1; i <= 7; i++) {
-    res += "#";
-    console.log(res);
-}
+const reverseString = (str) => {
+    if (typeof str !== "string") return null;
+    return str.split("").reverse().join("");
+};

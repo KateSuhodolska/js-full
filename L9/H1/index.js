@@ -1,11 +1,3 @@
-const users = {
-    "John Doe": 19,
-    Tom: 17,
-    Bob: 18,
-};
-
 function getKeys(obj) {
-    console.log(Object.keys(obj));
+    Object.keys(obj).forEach((item) => console.log(item));
 }
-
-getKeys(users);
