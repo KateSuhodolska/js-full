@@ -18,3 +18,13 @@ const ship = {
         console.log(`${this.name} lifting anchor down`);
     },
 };
+
+Object.setPrototypeOf(ship, vehicle);
+ship.stopMachine();
+
+const getOwnProps = (obj) => {
+    let arr = Object.entries(obj);
+    return arr.map((el) => el.filter((el) => el[1] != "function"));
+};
+
+console.log(getOwnProps(ship));
