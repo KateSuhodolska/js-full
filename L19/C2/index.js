@@ -1,3 +1,2 @@
-const getOwnProps = (obj) => {
-    return Object.keys(obj);
-};
+const getOwnProps = (obj) =>
+    Object.keys(obj).filter((el) => typeof obj[el] !== "function");
