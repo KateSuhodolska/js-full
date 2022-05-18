@@ -34,6 +34,8 @@ const attach = () => {
     spanEl.addEventListener("click", logGreenSpan);
 };
 
+attach();
+
 const attachHendler = document.querySelector(".attach-handlers-btn");
 attachHendler.addEventListener("click", attach);
 
