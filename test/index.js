@@ -61,7 +61,10 @@
 // console.log(solution("abcde", "cde"));
 // console.log(solution("abcde", "ade"));
 
-function openOrSenior(data) {}
+// 55 years, 7 lvl
+function openOrSenior(data) {
+    return data.map((el) => el.filter((el) => el[0] >= 55 && el[1] >= 7));
+}
 
 console.log(
     openOrSenior([
