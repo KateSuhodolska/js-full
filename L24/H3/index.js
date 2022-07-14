@@ -1,9 +1,9 @@
 const tasks = [
-    { text: "Buy milk", done: false, time: new Date() },
-    { text: "Pick up Tom from airport", done: false, time: new Date() },
-    { text: "Visit party", done: false, time: new Date() },
-    { text: "Visit doctor", done: true, time: new Date() },
-    { text: "Buy meat", done: true, time: new Date() },
+    { text: "Buy milk", done: false },
+    { text: "Pick up Tom from airport", done: false },
+    { text: "Visit party", done: false },
+    { text: "Visit doctor", done: true },
+    { text: "Buy meat", done: true },
 ];
 
 const listElem = document.querySelector(".list");
@@ -17,7 +17,7 @@ const updateTasks = (event) => {
 const renderTasks = (tasksList) => {
     listElem.innerHTML = "";
     const tasksElems = tasksList
-        .sort((a, b) => a.done - b.done || a.time - b.time)
+        .sort((a, b) => a.done - b.done)
         .map(({ text, done }, index) => {
             const listItemElem = document.createElement("li");
             listItemElem.classList.add("list__item");
@@ -48,7 +48,7 @@ const newTask = () => {
     if (taskName === "") {
         return;
     }
-    const taskObjEl = { text: taskName, done: false, time: new Date() };
+    const taskObjEl = { text: taskName, done: false };
     tasks.push(taskObjEl);
     taskField.value = "";
     renderTasks(tasks);
