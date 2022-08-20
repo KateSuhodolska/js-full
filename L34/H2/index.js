@@ -7,15 +7,10 @@ const text = document.querySelector('.form-input[type="text"]');
 const password = document.querySelector('.form-input[type="password"]');
 const loginForm = document.querySelector(".login-form");
 
-const isValid = () => {
-    if (
-        email.reportValidity() &&
-        text.reportValidity() &&
-        password.reportValidity()
-    ) {
-        registerButton.removeAttribute("disabled");
-    }
-};
+const isValid = () =>
+    email.reportValidity() && text.reportValidity() && password.reportValidity() ?
+    registerButton.removeAttribute("disabled") :
+    registerButton;
 
 const getData = () =>
     fetch(baseUrl)
