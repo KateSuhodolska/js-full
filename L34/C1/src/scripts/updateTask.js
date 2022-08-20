@@ -9,7 +9,7 @@ export const onToggleTask = (event) => {
     }
 
     const taskId = event.target.dataset.id;
-    const task = getTasksList(taskId).then();
+    const task = getTasksList(taskId);
     const done = event.target.checked;
 
     const updatedTask = {
