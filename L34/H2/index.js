@@ -2,13 +2,26 @@ const baseUrl =
     "https://62f900f53eab3503d1decd9d.mockapi.io/api/v1/users/user-form";
 
 const registerButton = document.querySelector(".submit-button");
+const emailInput = document.querySelector('.form-input[type="email"]');
+const textInput = document.querySelector('.form-input[type="text"]');
+const passwordInput = document.querySelector('.form-input[type="password"]');
 const loginForm = document.querySelector(".login-form");
 
 const isValid = () => {
-    if (loginForm.reportValidity()) {
-        registerButton.removeAttribute("disabled");
-    } else registerButton.setAttribute("disabled", true);
+    if (
+        emailInput.reportValidity() &&
+        textInput.reportValidity() &&
+        passwordInput.reportValidity()
+    ) {
+        registerButton.disabled = false;
+    }
 };
+
+// const isValid = () => {
+//     if (loginForm.reportValidity()) {
+//         registerButton.removeAttribute("disabled");
+//     } else registerButton.setAttribute("disabled", true);
+// };
 
 const getData = () =>
     fetch(baseUrl)
@@ -30,5 +43,5 @@ const sendData = (event) => {
         .then(() => loginForm.reset());
 };
 
-loginForm.addEventListener("change", isValid);
+loginForm.addEventListener("input", isValid);
 loginForm.addEventListener("submit", sendData);
