@@ -1,8 +1,9 @@
-const url = "https://62f900f53eab3503d1decd9d.mockapi.io/api/v1/users/users";
+const url = "https://62f900f53eab3503d1decd9d.mockapi.io/api/v1/users";
 
-const getUsersList = () => fetch(url).then((response) => response.json());
+export const getUsersList = () =>
+    fetch(url).then((response) => response.json());
 
-function getUserById(userId) {
+export function getUserById(userId) {
     return fetch(`${url}/${userId}`).then((response) => response.json());
 }
 
@@ -41,17 +42,17 @@ export function updateUser(userId, userData) {
     });
 }
 
-updateUser("5", updatedUserData).then(() => {
-    console.log("User updated");
-});
-// examples
-getUsersList().then((users) => {
-    console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
-});
+// updateUser("5", updatedUserData).then(() => {
+//     console.log("User updated");
+// });
+// // examples
+// getUsersList().then((users) => {
+//     console.log(users); // array of the user objects [{'id':'1', 'firstName':'Grayce' ... }, {'id':'2', 'firstName':'Ara' ... }, ...]
+// });
 
-getUserById("6").then((userData) => {
-    console.log(userData); // {'id':'2', 'firstName':'Ara' ... }
-});
+// getUserById("6").then((userData) => {
+//     console.log(userData); // {'id':'2', 'firstName':'Ara' ... }
+// });
 
 const newUserData = {
     email: "cool@email.com",
@@ -60,10 +61,10 @@ const newUserData = {
     age: 42,
 };
 
-createUser(newUserData).then(() => {
-    console.log("User created");
-});
+// createUser(newUserData).then(() => {
+//     console.log("User created");
+// });
 
 deleteUser("1").then(() => {
-    console.log("User delete");
+    console.log("User deleted");
 });
