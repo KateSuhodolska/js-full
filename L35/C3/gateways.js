@@ -1,15 +1,9 @@
 export const fetchUserData = (userName) =>
-    fetch(`https://api.github.com/users/${userName}`).then((response) => {
-        if (response.status === 200) {
-            return response.json();
-        }
-        throw new Error("Failed to load data");
-    });
+    fetch(`https://api.github.com/users/${userName}`)
+    .then((response) => response.json())
+    .catch((err) => alert(err));
 
 export const fetchRepo = (url) =>
-    fetch(url).then((response) => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error("Failed to load data");
-    });
+    fetch(url)
+    .then((response) => response.json())
+    .catch((err) => alert(err));
